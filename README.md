@@ -4,8 +4,8 @@ A simple shooter game made with Python's [`arcade`](https://arcade.academy/) mod
 ## How to Play
 ### Prerequisites
 - You have [Python 3](https://python.org) as well as the `pip` package manager.
-- You have the files from this repository on your computer, as well as the image and sound files in their respective directories, `images` and `sounds`.
 - You have installed the Python `arcade` module with `python -m pip install arcade`.
+- You have `main.py`, the images (in the `images` directory) and the sounds (in the `sounds` directory) on your computer.
 ### Playing the Game 
 Run `main.py` through the terminal or your preferred Python IDE.
 ### Keyboard Commands
