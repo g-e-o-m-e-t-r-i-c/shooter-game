@@ -259,15 +259,12 @@ class ShooterGame(arcade.Window):
                 enemy_sprite.center_y = y
                 enemy_sprite.center_x = x
 
-                # random() generates a random float number in range[0.0,1.0)
                 enemy_sprite.change_x = random.random() * 2.5 - 1.25
                 enemy_sprite.change_y = random.random() * 2.5 - 1.25
                 enemy_sprite.change_angle = (random.random() - 0.5) * 2
 
                 self.meteor_list.append(enemy_sprite)
                 self.hit_sound1.play()
-
-        # exercise, write a similar portion of code when meteor size is 3
 
         elif meteor.size == 3:
             for i in range(3):
