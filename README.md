@@ -1,6 +1,6 @@
 # shooter-game
 ## Description
-A simple shooter game made with Python's [Arcade](https://arcade.academy/) module.
+A simple shooter game made with Python's [`arcade`](https://arcade.academy/) module.
 ## How to Play
 ### Prerequisites
 - You have Python 3 as well as the `pip` package manager.
