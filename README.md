@@ -3,7 +3,7 @@
 A simple shooter game made with Python's [`arcade`](https://arcade.academy/) module.
 ## How to Play
 ### Prerequisites
-- You have Python 3 as well as the `pip` package manager.
+- You have [Python 3](https://python.org) as well as the `pip` package manager.
 - You have the files from this repository on your computer, as well as the image and sound files in their respective directories, `images` and `sounds`.
 - You have installed the Python `arcade` module with `python -m pip install arcade`.
 ### Playing the Game 
