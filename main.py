@@ -18,8 +18,7 @@ TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
 # list down all images and sounds used in the game
 BULLET_IMAGE = "images/laser.png"
 
-METEOR_BIG_IMAGE_LIST = ["images/meteorGrey_big1.png", "images/meteorGrey_big2.png",
-                         "images/meteorGrey_big3.png", "images/meteorGrey_big4.png"]
+METEOR_BIG_IMAGE_LIST = ["images/meteorGrey_big1.png", "images/meteorGrey_big2.png", "images/meteorGrey_big3.png", "images/meteorGrey_big4.png"]
 
 METEOR_MED_IMAGE_LIST = ["images/meteorGrey_med1.png", "images/meteorGrey_med2.png"]
 
