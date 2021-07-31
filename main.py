@@ -80,7 +80,6 @@ class ShipSprite(arcade.Sprite):
 
     def respawn(self):
         # Called when the ship dies and we need to make a new ship.
-
         # If we are in the middle of respawning, this is non-zero.
         self.respawning = 1
         self.center_x = SCREEN_WIDTH / 2
@@ -157,8 +156,9 @@ class ShooterGame(arcade.Window):
         self.score = 0
         self.player_sprite = None
         self.lives = 3
-        # Sounds
-        self.laser_sound = arcade.load_sound(LASER_SOUND)
+
+        # Sounds - BUG HERE
+        self.laser_sound = arcade.load_sound(LASER_SOUND)  # arcade module unable to load sounds
         self.hit_sound1 = arcade.load_sound(HIT_SOUND1)
         self.hit_sound2 = arcade.load_sound(HIT_SOUND2)
         self.hit_sound3 = arcade.load_sound(HIT_SOUND3)
@@ -198,7 +198,8 @@ class ShooterGame(arcade.Window):
 
             enemy_sprite.center_x = random.randrange(LEFT_LIMIT, RIGHT_LIMIT)
             enemy_sprite.center_y = random.randrange(BOTTOM_LIMIT, TOP_LIMIT)
-            # generates a random float uniformly in the semi - open range[0.0, 1.0)
+
+            # generates a random float uniformly in the semi-open range[0.0, 1.0)
             enemy_sprite.change_x = random.random() * 2 - 1  # [-1,1)
             enemy_sprite.change_y = random.random() * 2 - 1  # [-1,1)
 
