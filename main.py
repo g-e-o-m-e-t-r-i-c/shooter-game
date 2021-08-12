@@ -18,13 +18,17 @@ TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
 # list down all images and sounds used in the game
 BULLET_IMAGE = "images/laser.png"
 
-METEOR_BIG_IMAGE_LIST = ["images/meteorGrey_big1.png", "images/meteorGrey_big2.png", "images/meteorGrey_big3.png", "images/meteorGrey_big4.png"]
+METEOR_BIG_IMAGE_LIST = ["images/meteorGrey_big1.png", "images/meteorGrey_big2.png",
+                         "images/meteorGrey_big3.png", "images/meteorGrey_big4.png"]
 
-METEOR_MED_IMAGE_LIST = ["images/meteorGrey_med1.png", "images/meteorGrey_med2.png"]
+METEOR_MED_IMAGE_LIST = [
+    "images/meteorGrey_med1.png", "images/meteorGrey_med2.png"]
 
-METEOR_SMALL_IMAGE_LIST = ["images/meteorGrey_small1.png", "images/meteorGrey_small2.png"]
+METEOR_SMALL_IMAGE_LIST = [
+    "images/meteorGrey_small1.png", "images/meteorGrey_small2.png"]
 
-METEOR_TINY_IMAGE_LIST = ["images/meteorGrey_tiny1.png", "images/meteorGrey_tiny2.png"]
+METEOR_TINY_IMAGE_LIST = [
+    "images/meteorGrey_tiny1.png", "images/meteorGrey_tiny2.png"]
 
 SHIP_IMAGE = "images/spaceship.png"
 SHIPLIFE_IMAGE = "images/spaceship_life.png"
@@ -158,7 +162,8 @@ class ShooterGame(arcade.Window):
         self.lives = 3
 
         # Sounds - BUG HERE
-        self.laser_sound = arcade.load_sound(LASER_SOUND)  # arcade module unable to load sounds
+        # arcade module unable to load sounds
+        self.laser_sound = arcade.load_sound(LASER_SOUND)
         self.hit_sound1 = arcade.load_sound(HIT_SOUND1)
         self.hit_sound2 = arcade.load_sound(HIT_SOUND2)
         self.hit_sound3 = arcade.load_sound(HIT_SOUND3)
@@ -214,8 +219,10 @@ class ShooterGame(arcade.Window):
             bullet_sprite = BulletSprite(BULLET_IMAGE, SCALE)
 
             bullet_speed = 13
-            bullet_sprite.change_y = math.cos(math.radians(self.player_sprite.angle)) * bullet_speed
-            bullet_sprite.change_x = -math.sin(math.radians(self.player_sprite.angle)) * bullet_speed
+            bullet_sprite.change_y = math.cos(math.radians(
+                self.player_sprite.angle)) * bullet_speed
+            bullet_sprite.change_x = - \
+                math.sin(math.radians(self.player_sprite.angle)) * bullet_speed
 
             bullet_sprite.center_x = self.player_sprite.center_x
             bullet_sprite.center_y = self.player_sprite.center_y
@@ -310,7 +317,8 @@ class ShooterGame(arcade.Window):
             self.player_sprite_list.update()
 
             for bullet in self.bullet_list:
-                meteors = arcade.check_for_collision_with_list(bullet, self.meteor_list)
+                meteors = arcade.check_for_collision_with_list(
+                    bullet, self.meteor_list)
 
                 for meteor in meteors:
                     self.split_meteor(cast(MeteorSprite, meteor))
@@ -330,7 +338,8 @@ class ShooterGame(arcade.Window):
                     bullet.remove_from_sprite_lists()
 
             if not self.player_sprite.respawning:
-                meteors = arcade.check_for_collision_with_list(self.player_sprite, self.meteor_list)
+                meteors = arcade.check_for_collision_with_list(
+                    self.player_sprite, self.meteor_list)
                 if len(meteors) > 0:
                     if self.lives > 0:
                         self.lives -= 1
